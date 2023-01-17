@@ -1,0 +1,44 @@
+<!DOCTYPE html>  
+<html>  
+<head>  
+    <meta charset="utf 8">
+    <title>Dynamic table</title>     
+</head>  
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script> 
+<body>  
+   <div ng-app="myApp" ng-controller="myCtrl"> 
+    <form>
+        <label>Number of Rows: <input type="number" ng-model="numRows"></label>
+        <label>Number of Columns: <input type="number" ng-model="numCols"></label>
+        <button ng-click="generateTable()">Generate Table</button>
+    </form> 
+
+      <table ng-if="rows.length > 0 && columns.length > 0">
+        <tr ng-repeat="row in rows track by $index">
+          <td ng-repeat="col in columns track by $index"><input type="text"></td>
+        </tr>
+      </table>
+    </div> 
+
+
+<script>  
+    // angular.module("app", []).controller("HelloWorldCtrl", function($scope) {  
+    // $scope.message="Hello World" 
+    // } ) 
+//   $scope.generateTable = function() {
+//   $scope.rows = new Array($scope.numRows);
+//   $scope.columns = new Array($scope.numCols);
+// }  
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope) {
+  $scope.generateTable = function() {
+  $scope.rows = new Array($scope.numRows);
+  $scope.columns = new Array($scope.numCols);
+ } 
+});
+
+
+</script> 
+
+</body>  
+</html>
