@@ -6,6 +6,30 @@
 }
 
 #gridParent {
+    margin-top: 20px;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    row-gap: 20px;
+    justify-items: center;
+}
+
+.gridItem {
+    width: 200px;
+    height: 250px;
+    background: #eee;
+    font-weight: 700;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gridItem:hover {
+    background: #ccc;
+}
+
+.gridItem>a {
+    text-decoration: none;
+    color: #555;
+    display: block;
+    font-size: 25px;
 }
